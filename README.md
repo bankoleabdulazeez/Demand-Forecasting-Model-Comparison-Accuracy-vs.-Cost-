@@ -12,7 +12,7 @@ Comparing three forecasting methods across five retail product categories, and t
 
 ## Business Problem
 
-Getting demand forecasts wrong is expensive in two different ways. Overstocking ties up cash in inventory sitting in a warehouse and adds ongoing storage costs. Understocking is worse — it delays order fulfillment and manufacturing schedules, and ultimately costs lost sales. Because these two failure modes carry very different costs, no single forecasting method can be assumed "correct" without testing it against alternatives.
+Getting demand forecasts wrong is expensive in two different ways. Overstocking ties up cash in inventory sitting in a warehouse and adds ongoing storage costs. Understocking is worse, it delays order fulfillment and manufacturing schedules, and ultimately costs lost sales. Because these two failure modes carry very different costs, no single forecasting method can be assumed "correct" without testing it against alternatives.
 
 This analysis compares three forecasting methods across five product categories to answer two questions: which model actually saves the most money, and does the model with the best statistical accuracy (MAPE) also make the best financial decision?
 
@@ -40,7 +40,7 @@ Accuracy was scored using **Mean Absolute Percentage Error (MAPE)**. MAPE was th
 |---|---|---|---|
 | Outdoor & Sports | 16.09% | **12.42%** | 14.69% |
 | Health & Beauty | 9.41% | **8.62%** | 10.73% |
-| Home & Kitchen | 19.66% | 16.22% | 24.81% |
+| Home & Kitchen | 19.66% | **16.22%** | 24.81% |
 | Office Supplies | 17.93% | 14.43% | **12.90%** |
 | Electronics | 18.11% | 17.08% | **15.81%** |
 | **Average** | 16.24% | **13.75%** | 15.79% |
