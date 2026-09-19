@@ -2,6 +2,8 @@
 
 Comparing three forecasting methods across five retail product categories, and testing whether the model with the best statistical accuracy is actually the best financial decision.
 
+**Tools:** Excel (data cleaning, forecasting models, financial modeling) · Tableau (dashboard)
+
 ## Table of Contents
 
 - [Business Problem](#business-problem)
