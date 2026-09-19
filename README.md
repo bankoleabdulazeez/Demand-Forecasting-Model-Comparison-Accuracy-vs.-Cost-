@@ -1,9 +1,24 @@
 # Demand Forecasting Model Comparison: Accuracy vs. Cost
 
-Comparing three forecasting methods across five retail product categories, and testing whether the model with the best statistical accuracy is actually the best financial decision.
+I compared forecast accuracy with the financial consequences of forecast errors. Comparing three forecasting methods across five retail product categories, and testing whether the model with the best statistical accuracy is actually the best financial decision.
 
 **Tools:** Excel (data cleaning, forecasting models, financial modeling) · Tableau (dashboard)
+## Model Performance
+
+-**Best Accuracy**
+    Simple Exponential Smoothing
+    13.75% MAPE
+
+-**Lowest Estimated Cost**
+    3-Month Moving Average
+    £313,571
+
+-**Cost Difference**
+    Simple Exp. vs Moving Avg
+    £39,714
+    
 ![Dashboard showing MAPE and cost comparison across five product categories](Demand%20Forecasting%20Model%20Comparison%20Dashboard.png)
+
 ## Table of Contents
 
 - [Business Problem](#business-problem)
@@ -32,8 +47,7 @@ Starting from raw transactional data (orders, order line items, and product cost
 
 Accuracy was scored using **Mean Absolute Percentage Error (MAPE)**. MAPE was then translated into estimated **financial cost**:
 - **Understocking** → costed as lost margin per unit short
-- **Overstocking** → costed as unit cost × a 20% annual holding rate (industry-standard benchmark, prorated monthly — no company-specific figure existed in the data)
-
+- **Overstocking** → Overstocking → unit cost × an assumed 20% annual holding rate, prorated monthly.
 ## Key Findings
 
 ### MAPE by category and model
@@ -65,14 +79,14 @@ Accuracy was scored using **Mean Absolute Percentage Error (MAPE)**. MAPE was th
 - **No single model won on accuracy across every category.** Simple Exponential Smoothing had the best average MAPE, but Holt-Winters won outright in Office Supplies and Electronics, and Moving Average stayed competitive despite being the simplest method.
 - **The most accurate model wasn't the cheapest.** Simple Exponential Smoothing's better average MAPE didn't translate into lower cost summed across all five categories, it was actually the most expensive option, about £40,000 more than Moving Average. MAPE treats overstock and understock errors as equally "wrong," but financially they aren't: a stockout costs lost margin, typically far more expensive than the modest monthly holding cost of excess stock.
 - **Model performance is category-specific.** Only 3 of 5 categories had the same model win on both MAPE and cost, an argument against a one-size-fits-all model choice.
-- **Holt-Winters struggled where history was thin.** With 23 months of data, just short of the two full years needed to reliably estimate a repeating seasonal cycle. Holt-Winters produced the single worst result in the dataset, on Home & Kitchen (24.81% MAPE), likely because it forced a seasonal pattern the data couldn't yet support.
+- **Holt-Winters struggled where history was thin.** Holt-Winters performed poorly in some categories, particularly Home & Kitchen, where it produced the highest MAPE (24.81%). With only 23 months of history, the dataset contains fewer than two complete annual seasonal cycles, making seasonal patterns harder to estimate reliably. These results should therefore be reassessed as more historical data becomes available.
 
 ## Recommendation
 
-Model selection should be driven by estimated financial cost, not accuracy metrics alone. A practical approach: run all three models per category, translate each into estimated cost using category-specific margin and holding-cost figures, and select per category rather than committing to one method business-wide. Where a single default is needed for simplicity, Moving Average is the safer starting point given its lowest aggregate cost, despite weaker average accuracy.
+Model selection should be driven by estimated financial cost, not accuracy metrics alone. A practical approach: run all three models per category, translate each into estimated cost using category-specific margin and holding-cost figures, and select per category rather than committing to one method business-wide. Where a single default is needed for simplicity, Where a single default is required for simplicity, the 3-month Moving Average provides the lowest estimated aggregate cost in this analysis, although it has a higher average MAPE than Simple Exponential Smoothing.
 
 ## Limitations
 
-- The 20% annual holding cost rate is an industry-standard assumption, not a company-specific figure; results would shift with a business's actual holding costs.
+- The 20% annual holding-cost rate is an assumed benchmark rather than a company-specific figure. Because holding costs vary substantially by industry, product characteristics, and capital costs, the cost results should be interpreted as scenario estimates rather than actual business costs.
 - 23 months of history is right at the edge of what's needed to reliably estimate seasonality, the Holt-Winters results should be revisited once 2+ years of clean data are available.
 - Two categories (Outdoor & Sports, Home & Kitchen) showed a sharp demand spike in Aug–Sep 2024 that every model under-forecast. With only one prior year for comparison, it's unclear whether this is a recurring seasonal pattern or a one-off event.
