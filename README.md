@@ -3,7 +3,7 @@
 Comparing three forecasting methods across five retail product categories, and testing whether the model with the best statistical accuracy is actually the best financial decision.
 
 **Tools:** Excel (data cleaning, forecasting models, financial modeling) · Tableau (dashboard)
-**![Dashboard showing MAPE and cost comparison across five product categories]([Demand Forecasting Model Comparison Dashboard.png](https://github.com/bankoleabdulazeez/Demand-Forecasting-Model-Comparison-Accuracy-vs.-Cost-/blob/ffc649367a6eebd33f21369f718056f76da46442/Demand%20Forecasting%20Model%20Comparison%20Dashboard.png))**
+## ![Dashboard showing MAPE and cost comparison across five product categories]([Demand Forecasting Model Comparison Dashboard.png](https://github.com/bankoleabdulazeez/Demand-Forecasting-Model-Comparison-Accuracy-vs.-Cost-/blob/ffc649367a6eebd33f21369f718056f76da46442/Demand%20Forecasting%20Model%20Comparison%20Dashboard.png))
 
 ## Table of Contents
 
