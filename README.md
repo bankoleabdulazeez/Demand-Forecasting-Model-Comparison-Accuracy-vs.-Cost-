@@ -18,6 +18,7 @@ I compared forecast accuracy with the financial consequences of forecast errors.
     £39,714
     
 ![Dashboard showing MAPE and cost comparison across five product categories](Demand%20Forecasting%20Model%20Comparison%20Dashboard.png)
+https://public.tableau.com/app/profile/abdulazeez.bankole/viz/DemandForecastingModelComparison/DemandForecastingModelComparisonAccuracyvs_Cost
 
 ## Table of Contents
 
